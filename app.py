@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import google.generativeai as genai
-genai.configure(api_key='AIzaSyDk9ve8h4yXJDRN7S3uIIZfxLSxKA_19eY', transport='rest')
+genai.configure(api_key=st.secrets["GEMINI_KEY"], transport='rest')
 model = genai.GenerativeModel('gemini-2.5-flash')
 
 def graph_today(df, latest_week):
